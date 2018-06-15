@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "去登陆";
+}
+
+<h2>NETFX框架登录页面</h2>
+
+
+<div>
+    <form action='@Url.Action("LoalLogin","Home")'>
+        <input type="text" name="userId" placeholder="请输入当前站点用户名称" />
+        <input type="text" name="password" placeholder="请输入当前站点用户密码" />
+        <input type="submit" value="登录"/>
+    </form>
+
+    <div>
+        <a href="@Url.Action("RemoteLogin","Home")"><span style="color:cadetblue">一键智慧登录</span></a>
+    </div>
+</div>
+

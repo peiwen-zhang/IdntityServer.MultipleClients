@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IdentityModel.AspNetCore.OAuth2Introspection</name>
+    </assembly>
+    <members>
+        <member name="T:IdentityModel.AspNetCore.OAuth2Introspection.TokenRetrieval">
+            <summary>
+            Defines some common token retrieval strategies
+            </summary>
+        </member>
+        <member name="M:IdentityModel.AspNetCore.OAuth2Introspection.TokenRetrieval.FromAuthorizationHeader(System.String)">
+            <summary>
+            Reads the token from the authrorization header.
+            </summary>
+            <param name="scheme">The scheme (defaults to Bearer).</param>
+            <returns></returns>
+        </member>
+        <member name="M:IdentityModel.AspNetCore.OAuth2Introspection.TokenRetrieval.FromQueryString(System.String)">
+            <summary>
+            Reads the token from a query string parameter.
+            </summary>
+            <param name="name">The name (defaults to access_token).</param>
+            <returns></returns>
+        </member>
+        <member name="T:IdentityModel.AspNetCore.OAuth2Introspection.OAuth2IntrospectionDefaults">
+            <summary>
+            Defaults for OAuth 2.0 introspection authentication
+            </summary>
+        </member>
+        <member name="P:IdentityModel.AspNetCore.OAuth2Introspection.OAuth2IntrospectionDefaults.AuthenticationScheme">
+            <summary>
+            Gets the default authentication scheme.
+            </summary>
+            <value>
+            The authentication scheme.
+            </value>
+        </member>
+        <member name="T:IdentityModel.AspNetCore.OAuth2Introspection.OAuth2IntrospectionHandler">
+            <summary>
+            Authentication handler for OAuth 2.0 introspection
+            </summary>
+        </member>
+        <member name="M:IdentityModel.AspNetCore.OAuth2Introspection.OAuth2IntrospectionHandler.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions},System.Text.Encodings.Web.UrlEncoder,Microsoft.AspNetCore.Authentication.ISystemClock,Microsoft.Extensions.Logging.ILoggerFactory,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IdentityModel.AspNetCore.OAuth2Introspection.OAuth2IntrospectionHandler"/> class.
+            </summary>
+            <param name="options">The options.</param>
+            <param name="urlEncoder">The URL encoder.</param>
+            <param name="clock">The clock.</param>
+            <param name="loggerFactory">The logger factory.</param>
+            <param name="cache">The cache.</param>
+        </member>
+        <member name="M:IdentityModel.AspNetCore.OAuth2Introspection.OAuth2IntrospectionHandler.HandleAuthenticateAsync">
+            <summary>
+            Tries to authenticate a reference token on the current request
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.OAuth2IntrospectionExtensions">
+            <summary>
+            Extensions for registering the OAuth 2.0 introspection authentication handler
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.OAuth2IntrospectionExtensions.AddOAuth2Introspection(Microsoft.AspNetCore.Authentication.AuthenticationBuilder)">
+            <summary>
+            Adds the OAuth 2.0 introspection handler.
+            </summary>
+            <param name="builder">The builder.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.OAuth2IntrospectionExtensions.AddOAuth2Introspection(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,System.String)">
+            <summary>
+            Adds the OAuth 2.0 introspection handler.
+            </summary>
+            <param name="builder">The builder.</param>
+            <param name="authenticationScheme">The authentication scheme.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.OAuth2IntrospectionExtensions.AddOAuth2Introspection(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,System.Action{Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions})">
+            <summary>
+            Adds the OAuth 2.0 introspection handler.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="configureOptions">The configure options.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.OAuth2IntrospectionExtensions.AddOAuth2Introspection(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,System.String,System.Action{Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions})">
+            <summary>
+            Adds the OAuth 2.0 introspection handler.
+            </summary>
+            <param name="builder">The builder.</param>
+            <param name="authenticationScheme">The authentication scheme.</param>
+            <param name="configureOptions">The configure options.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions">
+            <summary>
+            Options class for the OAuth 2.0 introspection endpoint authentication handler
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.Authority">
+            <summary>
+            Sets the base-path of the token provider.
+            If set, the OpenID Connect discovery document will be used to find the introspection endpoint.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.IntrospectionEndpoint">
+            <summary>
+            Sets the URL of the introspection endpoint.
+            If set, Authority is ignored.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.ClientId">
+            <summary>
+            Specifies the id of the introspection client.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.ClientSecret">
+            <summary>
+            Specifies the shared secret of the introspection client.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.TokenTypeHint">
+            <summary>
+            Specifies the token type hint of the introspection client.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.NameClaimType">
+            <summary>
+            Specifies the claim type to use for the name claim (defaults to 'name')
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.RoleClaimType">
+            <summary>
+            Specifies the claim type to use for the role claim (defaults to 'role')
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.DiscoveryPolicy">
+            <summary>
+            Specifies the policy for the discovery client
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.BasicAuthenticationHeaderStyle">
+            <summary>
+            Gets or sets the basic authentication header style (RFC6749 vs RFC2617). Defaults to RFC6749.
+            </summary>
+            <value>
+            The basic authentication header style.
+            </value>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.DiscoveryTimeout">
+            <summary>
+            Specifies the timout for contacting the discovery endpoint
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.DiscoveryHttpHandler">
+            <summary>
+            Specifies the HTTP handler for the discovery endpoint
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.IntrospectionTimeout">
+            <summary>
+            Specifies the timeout for contacting the introspection endpoint
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.IntrospectionHttpHandler">
+            <summary>
+            Specifies the HTTP handler for the introspection endpoint
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.SkipTokensWithDots">
+            <summary>
+            Specifies whether tokens that contain dots (most likely a JWT) are skipped
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.SaveToken">
+            <summary>
+            Specifies whether the token should be stored
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.EnableCaching">
+            <summary>
+            Specifies whether the outcome of the toke validation should be cached. This reduces the load on the introspection endpoint at the STS
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.CacheDuration">
+            <summary>
+            Specifies for how long the outcome of the token validation should be cached.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.TokenRetriever">
+            <summary>
+            Specifies the method how to retrieve the token from the HTTP request
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.OAuth2IntrospectionOptions.Validate">
+            <summary>
+            Check that the options are valid. Should throw an exception if things are not ok.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            You must either set Authority or IntrospectionEndpoint
+            or
+            You must either set a ClientId or set an introspection HTTP handler
+            </exception>
+            <exception cref="T:System.ArgumentException">TokenRetriever must be set - TokenRetriever</exception>
+        </member>
+    </members>
+</doc>

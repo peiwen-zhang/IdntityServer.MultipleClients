@@ -1,0 +1,10 @@
+C:\Users\01\source\repos\IntelligentGovernmentCenter\IntelligentGovernmentCenter\bin\Debug\netcoreapp2.0\IntelligentGovernmentCenter.deps.json
+C:\Users\01\source\repos\IntelligentGovernmentCenter\IntelligentGovernmentCenter\bin\Debug\netcoreapp2.0\IntelligentGovernmentCenter.runtimeconfig.json
+C:\Users\01\source\repos\IntelligentGovernmentCenter\IntelligentGovernmentCenter\bin\Debug\netcoreapp2.0\IntelligentGovernmentCenter.runtimeconfig.dev.json
+C:\Users\01\source\repos\IntelligentGovernmentCenter\IntelligentGovernmentCenter\bin\Debug\netcoreapp2.0\IntelligentGovernmentCenter.dll
+C:\Users\01\source\repos\IntelligentGovernmentCenter\IntelligentGovernmentCenter\bin\Debug\netcoreapp2.0\IntelligentGovernmentCenter.pdb
+C:\Users\01\source\repos\IntelligentGovernmentCenter\IntelligentGovernmentCenter\obj\Debug\netcoreapp2.0\IntelligentGovernmentCenter.csproj.CoreCompileInputs.cache
+C:\Users\01\source\repos\IntelligentGovernmentCenter\IntelligentGovernmentCenter\obj\Debug\netcoreapp2.0\IntelligentGovernmentCenter.AssemblyInfoInputs.cache
+C:\Users\01\source\repos\IntelligentGovernmentCenter\IntelligentGovernmentCenter\obj\Debug\netcoreapp2.0\IntelligentGovernmentCenter.AssemblyInfo.cs
+C:\Users\01\source\repos\IntelligentGovernmentCenter\IntelligentGovernmentCenter\obj\Debug\netcoreapp2.0\IntelligentGovernmentCenter.dll
+C:\Users\01\source\repos\IntelligentGovernmentCenter\IntelligentGovernmentCenter\obj\Debug\netcoreapp2.0\IntelligentGovernmentCenter.pdb

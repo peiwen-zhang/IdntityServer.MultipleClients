@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@model netfx.hybrid.client.Models.UserInfo
+
+<h2 style="color:red">NETFX框架下客户端站点【Main】主页</h2>
+<h5>当前登录的用户信息如下：</h5>
+
+<p><b><span>本地用户：@Model.Name</span></b></p>
+
+<p><b><span>远程授权服务器：@Model.RemoteName</span></b></p>
+
+
+<p>
+    <a href="@Url.Action("RemoteCallAPI","Main")">调取远程API接口 展示数据</a>
+</p>
+
+

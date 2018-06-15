@@ -1,0 +1,10 @@
+E:\IdntityServer.MultipleClients\IdntityServer.MultipleClients\MyIdentityServer\bin\Debug\netcoreapp2.0\MyIdentityServer.deps.json
+E:\IdntityServer.MultipleClients\IdntityServer.MultipleClients\MyIdentityServer\bin\Debug\netcoreapp2.0\MyIdentityServer.runtimeconfig.json
+E:\IdntityServer.MultipleClients\IdntityServer.MultipleClients\MyIdentityServer\bin\Debug\netcoreapp2.0\MyIdentityServer.runtimeconfig.dev.json
+E:\IdntityServer.MultipleClients\IdntityServer.MultipleClients\MyIdentityServer\bin\Debug\netcoreapp2.0\MyIdentityServer.dll
+E:\IdntityServer.MultipleClients\IdntityServer.MultipleClients\MyIdentityServer\bin\Debug\netcoreapp2.0\MyIdentityServer.pdb
+E:\IdntityServer.MultipleClients\IdntityServer.MultipleClients\MyIdentityServer\obj\Debug\netcoreapp2.0\MyIdentityServer.csproj.CoreCompileInputs.cache
+E:\IdntityServer.MultipleClients\IdntityServer.MultipleClients\MyIdentityServer\obj\Debug\netcoreapp2.0\MyIdentityServer.AssemblyInfoInputs.cache
+E:\IdntityServer.MultipleClients\IdntityServer.MultipleClients\MyIdentityServer\obj\Debug\netcoreapp2.0\MyIdentityServer.AssemblyInfo.cs
+E:\IdntityServer.MultipleClients\IdntityServer.MultipleClients\MyIdentityServer\obj\Debug\netcoreapp2.0\MyIdentityServer.dll
+E:\IdntityServer.MultipleClients\IdntityServer.MultipleClients\MyIdentityServer\obj\Debug\netcoreapp2.0\MyIdentityServer.pdb
