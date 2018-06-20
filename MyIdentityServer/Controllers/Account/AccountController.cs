@@ -127,11 +127,11 @@ namespace IdentityServer4.Quickstart.UI
                     };
 
                     //自定义客户端分组逻辑
-                    var testClient = context.ClientId;
-                    if (testClient == "netcore.client")//判断是否需要单独登录的接口
+                    var checkLoginClients = new[] { "netcore.client3", "netcore.client4", "netfx.client3", "netfx.client4" };
+                    if (checkLoginClients.Contains(context.ClientId))//判断是否需要单独登录的接口
                     {
                         //var claim1 = new Claim("group1", "NeedLocalLogin");
-                        var claim2 = new Claim(testClient, "AlreadyLogin");
+                        var claim2 = new Claim(context.ClientId, "AlreadyLogin");
                         // issue authentication cookie with subject ID and username
                         await HttpContext.SignInAsync(zpw_user.Id.ToString(), zpw_user.Name, props, claim2);
                     }

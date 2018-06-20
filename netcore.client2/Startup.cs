@@ -39,11 +39,11 @@ namespace netcore.client2
             {
                 config.SignInScheme = "Cookies";
                 config.RequireHttpsMetadata = false;
-                config.Authority = "http://10.37.11.12:8000/";
-                config.ClientId = "netcore.client";
+                config.Authority = "http://10.37.11.12:7000/";
+                config.ClientId = "netcore.client2";
                 config.ClientSecret = "secret";
-                config.Scope.Add("netcore.api");
-                config.Scope.Add("netfx.api");
+                config.Scope.Add("netcore.api.TEST");
+                config.Scope.Add("netfx.api.TEST");
                 config.Scope.Add("openid");
                 config.Scope.Add("profile");
                 config.Scope.Add("offline_access");

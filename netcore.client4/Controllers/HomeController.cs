@@ -121,7 +121,7 @@ namespace netcore.client4.Controllers
         /// <returns></returns>
         private async Task<UserInfo> GetUserInfoByToken(string token)
         {
-            var dicClient = new DiscoveryClient("http://10.37.11.12:6000");
+            var dicClient = new DiscoveryClient("http://10.37.11.12:7000");
             dicClient.Policy.RequireHttps = false;
             var doc = await dicClient.GetAsync();
 

@@ -3,23 +3,24 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://10.37.11.12:8000/",
+      "applicationUrl": "http://10.37.11.12:7000/",
       "sslPort": 0
     }
   },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
+      "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "IntelligentGovernmentCenter": {
+    "MyIDS4": {
       "commandName": "Project",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://10.37.11.12:8000/"
+      "applicationUrl": "http://10.37.11.12:7000/"
     }
   }
 }

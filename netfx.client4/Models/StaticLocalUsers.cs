@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace netfx.hybrid.client.Models
+namespace netfx.client4.Models
 {
     public static class StaticLocalUsers
     {

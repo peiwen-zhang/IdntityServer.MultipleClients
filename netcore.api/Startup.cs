@@ -27,9 +27,9 @@ namespace netcore.api
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = "http://10.37.11.12:8000";
+                    options.Authority = "http://10.37.11.12:7000";
                     options.RequireHttpsMetadata = false;
-                    options.ApiName = "netcore.api";
+                    options.ApiName = "netcore.api.TEST";
                 });
         }
 
@@ -47,6 +47,15 @@ namespace netcore.api
             }
             app.UseAuthentication();
             app.UseStaticFiles();
+
+            //前后端分离时后端跨域设置
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyHeader();
+                builder.AllowAnyMethod();
+                //builder.WithOrigins("http://localhost:8080");
+                builder.AllowAnyOrigin();
+            });
 
             app.UseMvc(routes =>
             {

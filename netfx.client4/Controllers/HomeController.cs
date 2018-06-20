@@ -1,6 +1,6 @@
 ﻿using IdentityModel;
 using IdentityModel.Client;
-using netfx.hybrid.client.Models;
+using netfx.client4.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -68,16 +68,16 @@ namespace netfx.hybrid.client.Controllers
         /// <returns></returns>
         public async Task<ActionResult> RemoteLogin()
         {
-            var client = new DiscoveryClient("http://10.37.11.12:6000");
+            var client = new DiscoveryClient("http://10.37.11.12:7000");
             client.Policy.RequireHttps = false;
             var doc = await client.GetAsync();
             var request = new RequestUrl(doc.AuthorizeEndpoint);
             var url = request.CreateAuthorizeUrl(
-                        clientId: "netfx.client",
+                        clientId: "netfx.client4",
                         responseType: OidcConstants.ResponseTypes.CodeIdToken,
                         responseMode: OidcConstants.ResponseModes.FormPost,
                         redirectUri: "http://10.37.11.12:6004/Home/CallBack",
-                        scope: "netfx.api netcore.api openid",
+                        scope: "netfx.api.TEST netcore.api.TEST openid",
                         state: CryptoRandom.CreateUniqueId(),
                         nonce: CryptoRandom.CreateUniqueId());
 
@@ -98,7 +98,7 @@ namespace netfx.hybrid.client.Controllers
 
 
             //2.使用code获取Token
-            var dicClient = new DiscoveryClient("http://10.37.11.12:6000");
+            var dicClient = new DiscoveryClient("http://10.37.11.12:7000");
             dicClient.Policy.RequireHttps = false;
             var doc = await dicClient.GetAsync();
             var code = Request.Form["code"];
@@ -107,11 +107,11 @@ namespace netfx.hybrid.client.Controllers
 
             var tokenEndPoint = doc.TokenEndpoint;
             var keyPairs = new List<KeyValuePair<string, string>>();
-            keyPairs.Add(new KeyValuePair<string, string>("client_id", "netfx.client"));
+            keyPairs.Add(new KeyValuePair<string, string>("client_id", "netfx.client4"));
             keyPairs.Add(new KeyValuePair<string, string>("client_secret", "secret"));
             keyPairs.Add(new KeyValuePair<string, string>("code", code));
             keyPairs.Add(new KeyValuePair<string, string>("grant_type", "authorization_code"));
-            keyPairs.Add(new KeyValuePair<string, string>("redirect_uri", "http://10.37.11.12:8082/Home/CallBack"));
+            keyPairs.Add(new KeyValuePair<string, string>("redirect_uri", "http://10.37.11.12:6004/Home/CallBack"));
             var content = new FormUrlEncodedContent(keyPairs);
             #endregion
 
@@ -174,7 +174,7 @@ namespace netfx.hybrid.client.Controllers
             //退出远程COOKIE
             var id_token = Response.Cookies["id_token"].Value;
             var state = CryptoRandom.CreateUniqueId();
-            var signouturl = "http://10.37.11.12:6000/connect/endsession?";
+            var signouturl = "http://10.37.11.12:7000/connect/endsession?";
             var logoutCallBack = @"http://10.37.11.12:6004/Home/LogoutCallBack";
             signouturl += $"id_token={id_token}&post_logout_redirect_uri={logoutCallBack}&state={state}";
 
@@ -213,7 +213,7 @@ namespace netfx.hybrid.client.Controllers
         /// <returns></returns>
         private async Task<UserInfo> GetUserInfoByToken(string token)
         {
-            var userInfoClient = new UserInfoClient(@"http://10.37.11.12:6000/connect/userinfo");
+            var userInfoClient = new UserInfoClient(@"http://10.37.11.12:7000/connect/userinfo");
             var userinfoResponse = await userInfoClient.GetAsync(token);
             var claims = userinfoResponse.Claims;
 

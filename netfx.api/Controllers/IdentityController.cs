@@ -16,7 +16,7 @@ namespace Api.Controllers
         [HttpGet]
         public async Task<ActionResult> Get()
         {
-            var dicClient = new DiscoveryClient("http://10.37.11.12:8000");
+            var dicClient = new DiscoveryClient("http://10.37.11.12:7000");
             dicClient.Policy.RequireHttps = false;
             var doc = await dicClient.GetAsync();
             var token = Request.Headers["Authorization"].ToString().Trim().Substring(6).Trim();
@@ -25,7 +25,7 @@ namespace Api.Controllers
             var keyPairs = new List<KeyValuePair<string, string>>();
             keyPairs.Add(new KeyValuePair<string, string>("token_type_hint", "access_token"));
             keyPairs.Add(new KeyValuePair<string, string>("token", token));
-            keyPairs.Add(new KeyValuePair<string, string>("client_id", "netfx.api"));
+            keyPairs.Add(new KeyValuePair<string, string>("client_id", "netfx.api.TEST"));
             keyPairs.Add(new KeyValuePair<string, string>("client_secret", "123"));
 
             var content = new FormUrlEncodedContent(keyPairs);

@@ -3,11 +3,11 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iis": {
-      "applicationUrl": "http://10.37.11.12/netcore.api",
+      "applicationUrl": "http://10.37.11.12/netcore.api.TEST",
       "sslPort": 0
     },
     "iisExpress": {
-      "applicationUrl": "http://10.37.11.12:6061/",
+      "applicationUrl": "http://10.37.11.12:6062/",
       "sslPort": 0
     }
   },
@@ -19,12 +19,12 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "netcore.api": {
+    "netcore.api.TEST": {
       "commandName": "Project",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://10.37.11.12:6061/"
+      "applicationUrl": "http://10.37.11.12:6062/"
     }
   }
 }

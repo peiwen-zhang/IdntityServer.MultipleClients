@@ -1,5 +1,5 @@
 ﻿using netfx.api.Filter;
-using netfx.hybrid.client.Models;
+using netfx.client4.Models;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;

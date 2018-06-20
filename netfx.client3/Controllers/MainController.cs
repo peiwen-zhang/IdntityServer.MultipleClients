@@ -1,7 +1,6 @@
 ﻿using netfx.api.Filter;
-using netfx.hybrid.client.Models;
+using netfx.client3.Models;
 using Newtonsoft.Json;
-using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Mvc;
