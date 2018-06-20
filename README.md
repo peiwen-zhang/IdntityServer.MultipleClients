@@ -1,0 +1,2 @@
+# IdntityServer.MultipleClients
+IDS多客户端协同在线和互相顶替在线的core和mvc示例
