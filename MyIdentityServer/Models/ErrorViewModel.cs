@@ -1,6 +1,6 @@
 using System;
 
-namespace IntelligentGovernmentCenter.Models
+namespace MyIdentityServer.Models
 {
     public class ErrorViewModel
     {

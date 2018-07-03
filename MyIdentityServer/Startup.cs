@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using IdentityServer4.ResponseHandling;
-using IntelligentGovernmentCenter.DB;
+using MyIdentityServer.DB;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace IntelligentGovernmentCenter
+namespace MyIdentityServer
 {
     public class Startup
     {
@@ -26,9 +26,11 @@ namespace IntelligentGovernmentCenter
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<IntelGovContext>(option =>
+            var connectionString = Configuration.GetConnectionString("MySqlAuthConnectString");
+
+            services.AddDbContext<IntelContext>(option =>
             {
-                option.UseSqlServer(@"Data Source=ZHANGPW-PC\SQLSERVER_ZPW; Initial Catalog = TEST; Integrated Security = True; User Id = sa; Pwd = 123");
+                option.UseSqlServer(connectionString);
             });
 
             //services.AddIdentityServer().AddDeveloperSigningCredential()
@@ -36,7 +38,6 @@ namespace IntelligentGovernmentCenter
             //    .AddInMemoryApiResources(Config.GetApiResources())
             //    .AddInMemoryClients(Config.GetClients()).AddResourceOwnerValidator<ValidUser>().AddProfileService<ProfileService>();
 
-            var connectionString = @"Data Source=ZHANGPW-PC\SQLSERVER_ZPW; Initial Catalog = TEST; Integrated Security = True; User Id = sa; Pwd = 123;trusted_connection=yes;";
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
             services.AddIdentityServer(o =>

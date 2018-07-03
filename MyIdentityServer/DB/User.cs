@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace IntelligentGovernmentCenter.DB
+namespace MyIdentityServer.DB
 {
     [Table("UserInfo")]
     public class User

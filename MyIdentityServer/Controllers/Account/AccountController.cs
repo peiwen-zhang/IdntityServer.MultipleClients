@@ -18,7 +18,7 @@ using Microsoft.AspNetCore.Authentication;
 using IdentityServer4.Events;
 using IdentityServer4.Extensions;
 using IdentityServer4.Models;
-using IntelligentGovernmentCenter.DB;
+using MyIdentityServer.DB;
 
 namespace IdentityServer4.Quickstart.UI
 {
@@ -35,7 +35,7 @@ namespace IdentityServer4.Quickstart.UI
         private readonly IClientStore _clientStore;
         private readonly IAuthenticationSchemeProvider _schemeProvider;
         private readonly IEventService _events;
-        private IntelGovContext _myEfContext;
+        private IntelContext _myEfContext;
 
         public AccountController(
             IIdentityServerInteractionService interaction,
@@ -43,7 +43,7 @@ namespace IdentityServer4.Quickstart.UI
             IAuthenticationSchemeProvider schemeProvider,
             IEventService events,
             TestUserStore users = null,
-            IntelGovContext efContext = null)
+            IntelContext efContext = null)
         {
             // if the TestUserStore is not in DI, then we'll just use the global users collection
             // this is where you would plug in your own custom identity management library (e.g. ASP.NET Identity)

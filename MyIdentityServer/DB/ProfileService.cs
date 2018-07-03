@@ -5,14 +5,14 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace IntelligentGovernmentCenter.DB
+namespace MyIdentityServer.DB
 {
     public class ProfileService : IProfileService
     {
-        private IntelGovContext _userDb = null;
+        private IntelContext _userDb = null;
 
 
-        public ProfileService(IntelGovContext userDB)
+        public ProfileService(IntelContext userDB)
         {
             _userDb = userDB;
         }

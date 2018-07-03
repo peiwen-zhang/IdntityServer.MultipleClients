@@ -8,14 +8,14 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using static IdentityModel.OidcConstants;
 
-namespace IntelligentGovernmentCenter.DB
+namespace MyIdentityServer.DB
 {
     public class ValidUser : IResourceOwnerPasswordValidator
     {
-        private IntelGovContext _userDb = null;
+        private IntelContext _userDb = null;
 
 
-        public ValidUser(IntelGovContext userDB) {
+        public ValidUser(IntelContext userDB) {
             _userDb = userDB;
         }
 
