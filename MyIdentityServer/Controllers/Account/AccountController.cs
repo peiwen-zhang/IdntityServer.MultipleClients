@@ -109,10 +109,10 @@ namespace IdentityServer4.Quickstart.UI
             if (ModelState.IsValid)
             {
                 //--------------------------------------------这部分代码逻辑自己定义---------------------------------------------------------------------------------------------------------------------------------------------------------
-                var zpw_user = _myEfContext.UserDb.FirstOrDefault(x=>x.Name == model.Username && x.Password == model.Password);
-                if (zpw_user != null)
+                var user = _myEfContext.UserDb.FirstOrDefault(x=>x.Name == model.Username && x.Password == model.Password);
+                if (user != null)
                 {
-                    await _events.RaiseAsync(new UserLoginSuccessEvent(zpw_user.Name, zpw_user.Id.ToString(), zpw_user.Name));
+                    await _events.RaiseAsync(new UserLoginSuccessEvent(user.Name, user.Id.ToString(), user.Name));
 
                     // only set explicit expiration here if user chooses "remember me". 
                     // otherwise we rely upon expiration configured in cookie middleware.
@@ -133,12 +133,12 @@ namespace IdentityServer4.Quickstart.UI
                         //var claim1 = new Claim("group1", "NeedLocalLogin");
                         var claim2 = new Claim(context.ClientId, "AlreadyLogin");
                         // issue authentication cookie with subject ID and username
-                        await HttpContext.SignInAsync(zpw_user.Id.ToString(), zpw_user.Name, props, claim2);
+                        await HttpContext.SignInAsync(user.Id.ToString(), user.Name, props, claim2);
                     }
                     else
                     {
                         // issue authentication cookie with subject ID and username
-                        await HttpContext.SignInAsync(zpw_user.Id.ToString(), zpw_user.Name, props);
+                        await HttpContext.SignInAsync(user.Id.ToString(), user.Name, props);
                     }
                     return Redirect(model.ReturnUrl);
 
