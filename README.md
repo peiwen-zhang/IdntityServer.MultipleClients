@@ -1,2 +1,3 @@
 # IdntityServer.MultipleClients
-IDS多客户端协同在线和互相顶替在线的core和mvc示例
+示例主要粗略展示 当IDS作为唯一授权中心的时候  怎样保持多个终端保持仅一个端在线。
+
